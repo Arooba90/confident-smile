@@ -2,11 +2,13 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-42VJ215WHH"></script>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MFWM29QP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('config', 'G-42VJ215WHH');
   dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
 </script>
 
@@ -208,7 +210,7 @@ var saved;try{saved=localStorage.getItem('lang')}catch(e){}if(saved=='en')set('e
 <script>
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.href,ev=null;
 if(h.indexOf('wa.me')>-1)ev='whatsapp_click';else if(h.indexOf('tel:')==0)ev='phone_click';else if(h.indexOf('instagram.com')>-1)ev='instagram_click';else if(h.indexOf('google.com/maps')>-1)ev='directions_click';else if(h.indexOf('g.page')>-1)ev='review_click';
-if(ev)(window.dataLayer=window.dataLayer||[]).push({event:ev,link_url:h});});
+if(ev){(window.dataLayer=window.dataLayer||[]).push({event:ev,link_url:h});if(window.gtag)gtag('event',ev,{link_url:h});}});
 </script>
 </body>
 </html>
