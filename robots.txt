@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://confident-smile.org/sitemap.xml
