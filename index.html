@@ -15,6 +15,11 @@ a{color:#2E3A8C}a:hover{color:#1F2A6B}
 <style>html{scroll-behavior:smooth}*{box-sizing:border-box}</style>
 <style>
 html[lang=en] .svc .en,html[lang=en] .enname{display:none}
+#langSw{position:relative;display:inline-flex;background:#E3EEF6;border-radius:999px;padding:4px;direction:ltr}
+#langSw button{position:relative;z-index:1;font:inherit;font-weight:700;font-size:14px;width:44px;height:36px;border:0;background:none;color:#4A5578;cursor:pointer;border-radius:999px;transition:color .25s}
+#langSw button[aria-pressed=true]{color:#FFFFFF}
+#langSw .knob{position:absolute;top:4px;left:4px;width:44px;height:36px;border-radius:999px;background:#2E3A8C;transition:transform .25s}
+html[lang=en] #langSw .knob{transform:translateX(44px)}
 .grp{margin:8px 0 0;font-size:22px;font-weight:800;color:#2E3A8C}
 .sg{display:grid;align-items:start;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px}
 .svc{font:inherit;color:inherit;text-align:start;cursor:pointer;background:#F6F9FC;border:1px solid transparent;border-radius:20px;padding:20px;display:grid;grid-template-columns:52px 1fr auto;column-gap:14px;align-items:center;transition:border-color .2s,box-shadow .2s}
@@ -36,7 +41,7 @@ html[lang=en] .svc .en,html[lang=en] .enname{display:none}
 .hdr{justify-content:center!important;text-align:center;padding:14px 16px!important;gap:10px!important}
 .logo{height:60px!important}
 .nav{width:100%;justify-content:center;gap:18px!important;font-size:15px!important;order:3}
-.hdr>a{display:none}
+.hact .bookbtn{display:none}
 .hero{padding:24px 16px 40px!important;gap:24px!important;text-align:center}
 .hero>div:first-child>span{align-self:center!important}
 .hero>div:first-child>div{justify-content:center}
@@ -69,8 +74,7 @@ section{padding-left:16px!important;padding-right:16px!important}
 <a href="#team" style="text-decoration: none; color: #1A2150">فريقنا</a>
 <a href="#contact" style="text-decoration: none; color: #1A2150">تواصل معنا</a>
 </nav>
-<button type="button" id="langBtn" aria-label="Switch language" style="font: inherit; cursor: pointer; background: #FFFFFF; color: #2E3A8C; border: 1px solid #C8D6E8; border-radius: 999px; padding: 10px 16px; font-weight: 700; font-size: 15px">English</button>
-<a href="#contact" style="text-decoration: none; background: #2E3A8C; color: #FFFFFF; padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 15px">احجز موعدك</a>
+<div class="hact" style="display: flex; align-items: center; gap: 12px"><div id="langSw" role="group" aria-label="Language"><span class="knob" aria-hidden="true"></span><button type="button" data-l="ar" aria-pressed="true">ع</button><button type="button" data-l="en" aria-pressed="false">EN</button></div><a class="bookbtn" href="#contact" style="text-decoration: none; background: #2E3A8C; color: #FFFFFF; padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 15px">احجز موعدك</a></div>
 </header>
 
 <section class="hero" style="max-width: 1160px; margin: 0 auto; padding: 56px 24px 72px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
@@ -125,11 +129,11 @@ section{padding-left:16px!important;padding-right:16px!important}
 (function(){var M={"45 ر.ع": "45 OMR", "65 ر.ع": "65 OMR", "80 ر.ع": "80 OMR", "© الابتسامة المتكاملة لطب الأسنان": "© The Confident Smile Dental Clinic", "أجهزة حديثة لتشخيص دقيق وعلاج مريح.": "Modern equipment for accurate diagnosis and comfortable treatment.", "أطباء في مختلف تخصصات طب الأسنان.": "Dentists across a range of dental specialties.", "إعادة علاج العصب": "Re-root canal treatment", "ابتداءً من 60 ر.ع": "From 60 OMR", "ابتداءً من 80 ر.ع": "From 80 OMR", "ابتسامة هوليود": "Hollywood smile", "ابتسامتك الصحية تبدأ من هنا": "Your healthy smile starts here", "اتصل واحجز موعدك الآن:": "Call to book now:", "احجز موعدك": "Book now", "احجز موعدك الآن": "Book your appointment", "احجز موعدك اليوم": "Book your appointment today", "اضغط على الخدمة لعرض السعر": "Tap a service to see the price", "الأسنان الأمامية": "Front teeth", "الأسنان الخلفية": "Back teeth", "التبييض الليزري (فلاش)": "In-office laser whitening", "التركيبات الثابتة والمتحركة": "Fixed & removable prosthesis", "التزام كامل بمعايير التعقيم وسلامة المرضى.": "Full commitment to sterilization and patient safety.", "الحشوات التجميلية": "Composite veneers", "الخدمات التجميلية": "Cosmetic services", "الخدمات العلاجية": "Treatments", "السعر": "Price", "السعر ⌄": "Price ⌄", "العنوان: العامرات، بجانب مركز الجملة": "Address: Al Amerat, next to the Wholesale Center", "تابعنا على انستجرام": "Follow us on Instagram", "تبييض الأسنان": "Teeth whitening", "تبييض القوالب المنزلي": "Home whitening trays", "تعرّف على خدماتنا": "Our services", "تعقيم وأمان": "Sterilization & safety", "تقنيات حديثة": "Modern technology", "تقويم الأسنان": "Orthodontics", "تنظيف وتلميع الأسنان": "Scale & polish", "تواصل عبر واتساب": "Chat on WhatsApp", "تواصل معنا": "Contact", "حسب الحالة، تواصل معنا": "Depends on the case, contact us", "حشوات الأسنان": "Fillings", "خدماتنا": "Services", "د. جيفر السيابي": "Dr. Jaifar Alsiyabi", "رعاية شاملة لصحة وجمال أسنانك لكل أفراد العائلة، بأيدي فريق متخصص وفي بيئة مريحة وآمنة.": "Complete care for healthy, beautiful teeth for the whole family, by a specialist team in a comfortable, safe setting.", "زراعة الأسنان": "Dental implants", "طبيب أسنان": "Dentist", "علاج عصب الأسنان": "Root canal treatment", "عيادة أسنان متكاملة": "Comprehensive dental clinic", "فريق متخصص": "Specialist team", "فريقنا": "Our team", "لماذا نحن": "Why us", "من 15 إلى 25 ر.ع": "15 – 25 OMR"},R={};for(var k in M)R[M[k]]=k;var nodes=[];
 var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var p=n.parentNode.nodeName;return (p=='SCRIPT'||p=='STYLE'||!n.nodeValue.trim())?2:1}});
 while(w.nextNode())nodes.push(w.currentNode);
-var btn=document.getElementById('langBtn'),root=document.documentElement,wrap=document.querySelector('body [dir="rtl"]');
+var sw=document.getElementById('langSw'),root=document.documentElement,wrap=document.querySelector('body [dir="rtl"]');
 function set(l){var map=l=='en'?M:R;nodes.forEach(function(n){var t=n.nodeValue.trim();if(map[t])n.nodeValue=n.nodeValue.replace(t,map[t])});
-root.lang=l;root.dir=l=='en'?'ltr':'rtl';if(wrap)wrap.dir=root.dir;btn.textContent=l=='en'?'العربية':'English';
+root.lang=l;root.dir=l=='en'?'ltr':'rtl';if(wrap)wrap.dir=root.dir;sw.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l==l)});
 document.title=l=='en'?'The Confident Smile | Dental Clinic':'الابتسامة المتكاملة | The Confident Smile';try{localStorage.setItem('lang',l)}catch(e){}}
-btn.addEventListener('click',function(){set(root.lang=='en'?'ar':'en')});
+sw.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){if(root.lang!=b.dataset.l)set(b.dataset.l)})});
 var saved;try{saved=localStorage.getItem('lang')}catch(e){}if(saved=='en')set('en');})();
 </script>
 </body>
